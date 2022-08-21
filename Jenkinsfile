@@ -3,7 +3,7 @@ pipeline {
     environment{
         NEW_VERSION = '1.3.0'
         // using credential in jenkins file "credential("credentialID")" binds the credential to your env var
-        SERVER_CREDENTIALS = credentials('server-credential')
+        //SERVER_CREDENTIALS = credentials('server-credential')
     }   
     parameters{
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
@@ -31,9 +31,9 @@ pipeline {
             steps {
                 echo 'deploying the application...'
                 echo "deploying versio $params.VERSION"
-                withCredentials([
+               /* withCredentials([
                     usernamePassword(credentials: 'server-credential', usernameVariable: USER, passwordVariable: PWD)
-                ])
+                ]) */
             }
         }
     }
