@@ -20,7 +20,7 @@ pipeline {
             when{
                 expression{
                     //BRANCH_NAME == 'dev' && BRANCH_NAME == 'main'
-                    params.executeTest
+                    params.executeTests
                 }    
             }
             steps {
